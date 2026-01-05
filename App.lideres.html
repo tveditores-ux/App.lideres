@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iglesia Conectada</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #4a148c 0%, #1a237e 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .app-container { max-width: 500px; margin: auto; padding: 20px; }
+        header { text-align: center; padding: 20px 0; }
+        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .card:hover { background: rgba(255, 255, 255, 0.2); transform: scale(1.05); }
+        .card i { font-size: 2rem; display: block; margin-bottom: 10px; }
+        .status { margin-top: 20px; font-size: 0.8rem; text-align: center; opacity: 0.7; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Grupo Pequeño</h1>
+            <p>Gestión y Crecimiento</p>
+        </header>
+
+        <div class="menu-grid">
+            <div class="card" onclick="accion('Lecciones')">📖<br>Lecciones</div>
+            <div class="card" onclick="accion('Musica')">🎵<br>Música</div>
+            <div class="card" onclick="accion('FODA')">📊<br>FODA</div>
+            <div class="card" onclick="accion('Agenda')">📅<br>Agenda</div>
+            <div class="card" onclick="accion('Bitacora')">📝<br>Bitácora</div>
+            <div class="card" onclick="accion('Alarmas')">⏰<br>Alarmas</div>
+        </div>
+
+        <div class="status" id="server-status">Conectando al servidor Python...</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
